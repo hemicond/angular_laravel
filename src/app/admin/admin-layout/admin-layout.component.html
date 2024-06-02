@@ -1,0 +1,83 @@
+<!-- 
+<div class="flex h-full overflow-hidden bg-gray-50 dark:bg-gray-900">
+  <flowbite-sidebar extraClass="border-r">
+    <flowbite-sidebar-item-group>
+      <flowbite-sidebar-item
+        *ngFor="let component of components"
+        [icon]="component.icon"
+        [link]="component.href"
+        >{{ component.title }}</flowbite-sidebar-item
+      >
+    </flowbite-sidebar-item-group>
+  </flowbite-sidebar>
+  <main class="flex-1 overflow-auto p-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+ -->
+<app-header></app-header>
+<div class="flex h-full overflow-hidden bg-gray-50 dark:bg-gray-900">
+  <app-sidebar extraClass="border-r">
+    <flowbite-sidebar-item-group>
+      <div *ngFor="let mainTittle of sidebarData">
+        <div *ngFor="let menu of mainTittle.menu">
+          <flowbite-sidebar-item
+            *ngFor="let subMenus of menu.subMenus"
+            [icon]="subMenus.icon"
+            [link]="subMenus.route"
+            >{{ subMenus.menuValue }}</flowbite-sidebar-item
+          >
+        </div>
+      </div>
+    </flowbite-sidebar-item-group>
+  </app-sidebar>
+  <main class="flex-1 overflow-auto p-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!-- 
+
+
+<div
+  class="sidebar"
+  id="sidebar"
+  (mouseover)="miniSideBarMouseHover('over')"
+  (mouseout)="miniSideBarMouseHover('out')"
+>
+  <div id="sidebar-menu" class="sidebar-menu">
+    <ul>
+      <div *ngFor="let mainTittle of sidebarData">
+     
+        <div *ngFor="let menu of mainTittle.menu">
+       
+          <li class="submenu" *ngIf="menu.hasSubRoute === true">
+     
+            <ul>
+              <div *ngFor="let subMenus of menu.subMenus">
+                <li>
+                  <a
+                    routerLink="subMenus.route"
+                    *ngIf="subMenus.show_nav"
+                    [class.active]="currentUrl === subMenus.base"
+                  >
+                    {{ subMenus.menuValue }}
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </ul>
+    <div class="logout-btn">
+      <a routerLink="routes.login"
+        ><span class="menu-side"
+          ><img src="assets/img/icons/logout.svg" alt=""
+        /></span>
+        <span>Logout</span></a
+      >
+    </div>
+  </div>
+</div>
+ -->

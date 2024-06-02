@@ -1,0 +1,56 @@
+<!-- <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [formControl]="nombreControl" />
+    <div *ngIf="nombreControl.invalid && nombreControl.touched">
+      <div *ngIf="nombreControl.errors.required" class="error">
+        El nombre es requerido.
+      </div>
+      <div *ngIf="nombreControl.errors.minlength" class="error">
+        El nombre debe tener al menos 3 caracteres.
+      </div>
+      <div *ngIf="nombreControl.errors.maxlength" class="error">
+        El nombre no puede tener más de 50 caracteres.
+      </div>
+      <div *ngIf="nombreControl.errors.caracteresEspeciales" class="error">
+        El nombre no puede contener caracteres especiales.
+      </div>
+     
+    </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [formControl]="emailControl" />
+    <div *ngIf="emailControl.invalid && emailControl.touched">
+      <div *ngIf="emailControl.errors.required" class="error">
+        El email es requerido.
+      </div>
+      <div *ngIf="emailControl.errors.email" class="error">
+        El email no es válido.
+      </div>
+      <div *ngIf="emailControl.errors.pattern" class="error">
+        El email no tiene el formato correcto.
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" [formControl]="telefonoControl" />
+    <div *ngIf="telefonoControl.invalid && telefonoControl.touched">
+      <div *ngIf="telefonoControl.errors.required" class="error">
+        El teléfono es requerido.
+      </div>
+      <div *ngIf="telefonoControl.errors.pattern" class="error">
+        El teléfono debe contener 10 dígitos.
+      </div>
+      <div
+        *ngIf="telefonoControl.errors.min || telefonoControl.errors.max"
+        class="error"
+      >
+        El teléfono debe estar entre 1000000000 y 9999999999.
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+</form>
+ -->
