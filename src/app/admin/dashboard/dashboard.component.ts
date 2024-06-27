@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { components } from '../../common/components';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +13,9 @@ import { components } from '../../common/components';
 })
 export class DashboardComponent {
   components = components.filter((component) => !!component.card);
-
-  constructor() {
-    console.log(components);
+  public url: string = '';
+  constructor(private router: Router) {
+    this.url = this.router.url;
+    console.log(this.url);
   }
 }

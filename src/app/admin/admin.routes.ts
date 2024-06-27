@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { RolesComponent } from './roles/roles.component';
 import { ProductsComponent } from './products/products.component';
 import { RolesFormComponent } from './roles/roles-form/roles-form.component';
+import { UsersFormComponent } from './users/users-form/users-form.component';
 
 export const ADMIN_ROUTES: Routes = [
   {
@@ -17,6 +18,7 @@ export const ADMIN_ROUTES: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'calendar', component: CalendarComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'users/form', component: UsersFormComponent },
       { path: 'roles', component: RolesComponent },
       { path: 'roles/form', component: RolesFormComponent },
       { path: 'roles/form/edit/:id', component: RolesFormComponent },

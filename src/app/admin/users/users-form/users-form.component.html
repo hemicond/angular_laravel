@@ -1,0 +1,289 @@
+<div
+  class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700"
+>
+  <div class="w-full mb-1">
+    <div class="mb-4">
+      <nav class="flex mb-5" aria-label="Breadcrumb">
+        <ol
+          class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2"
+        >
+          <li class="inline-flex items-center">
+            <a
+              class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"
+            >
+              <svg
+                class="w-5 h-5 mr-2.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <a
+                class="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white"
+                >{{ this.breadcumb }}</a
+              >
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <h1
+        class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
+      >
+        {{ this.breadcumb }}
+      </h1>
+    </div>
+    <!--SeARCH-->
+    <div class="items-center justify-between block sm:flex">
+      <div class="flex items-center mb-4 sm:mb-0">
+        <form class="sm:pr-3" action="#">
+          <label for="products-search" class="sr-only">nombre rol</label>
+          <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+            <input
+              [(ngModel)]="name"
+              type="text"
+              name="email"
+              id="products-search"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Nombre del Rol"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+        <button
+          type="button"
+          data-refresh
+          class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-green-400 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+        >
+          <svg
+            class="w-5 h-5 mr-2 -ml-1"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+            ></path>
+          </svg>
+          Limpiar
+        </button>
+        <button
+          (click)="save()"
+          class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          type="button"
+        >
+          <svg
+            class="w-5 h-5 mr-2 -ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          {{ this.name_button }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="p-6 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700"
+>
+  <div class="flex flex-col">
+    <div class="overflow-x-auto">
+      <div class="inline-block min-w-full align-middle">
+        <div class="overflow-hidden shadow">
+          <!-- Add Product Drawer -->
+
+          <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5"></section>
+
+          <h5
+            id="drawer-label"
+            class="inline-flex items-center mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400"
+          >
+            New Product
+          </h5>
+
+          <form>
+            <div class="space-y-4">
+              <div class="py-3 sm:py-5">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=""
+                  />
+                  <label
+                    for="floating_outlined"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >Name</label
+                  >
+                </div>
+              </div>
+              <div class="py-3 sm:py-5">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=""
+                  />
+                  <label
+                    for="floating_outlined"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >Surname</label
+                  >
+                </div>
+              </div>
+              <div class="py-3 sm:py-5">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=""
+                  />
+                  <label
+                    for="floating_outlined"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >Email</label
+                  >
+                </div>
+              </div>
+              <div class="py-3 sm:py-5">
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="floating_outlined"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=""
+                  />
+                  <label
+                    for="floating_outlined"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >password</label
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="category-create"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Technology</label
+                >
+                <select
+                  id="category-create"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                >
+                  <option selected="">Select category</option>
+                  <option value="FL">Flowbite</option>
+                  <option value="RE">React</option>
+                  <option value="AN">Angular</option>
+                  <option value="VU">Vue</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="description"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Description</label
+                >
+                <textarea
+                  id="description"
+                  rows="4"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="Enter event description here"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="discount-create"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Discount</label
+                >
+                <select
+                  id="discount-create"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                >
+                  <option selected="">No</option>
+                  <option value="5">5%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                </select>
+              </div>
+              <!--  <div
+              class="bottom-0 left-0 flex justify-center w-full pb-4 space-x-4 md:px-4 md:absolute"
+            >
+              <button
+                type="submit"
+                class="text-white w-full justify-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              >
+                Add product
+              </button>
+              <button
+                type="button"
+                data-drawer-dismiss="drawer-create-product-default"
+                aria-controls="drawer-create-product-default"
+                class="inline-flex w-full justify-center text-gray-500 items-center bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 -ml-1 sm:mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                Cancel
+              </button>
+            </div> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

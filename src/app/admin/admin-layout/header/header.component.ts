@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@shared/auth/auth.service';
-import { SideBarService } from '@shared/data/side-bar.service';
+
 import { routes } from '@shared/routes/routes';
 
 import { NavbarComponent } from '../../../common/navbar.component';
@@ -21,5 +21,15 @@ export class HeaderComponent {
   public addClass = false;
   public user: any;
 
-  constructor(readonly sidebarService: SidebarService) {}
+  constructor(
+    readonly sidebarService: SidebarService,
+    public auth: AuthService
+  ) {
+    let USER = localStorage.getItem('user');
+    this.user = JSON.parse(USER ? USER : '');
+  }
+
+  logout() {
+    this.auth.logout();
+  }
 }

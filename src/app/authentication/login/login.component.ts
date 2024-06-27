@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   public ERROR = false;
 
   _form = this.builder.group({
-    email: this.builder.control('tester@gmail.com', Validators.required),
+    email: this.builder.control('tester@example.com', Validators.required),
     password: this.builder.control('123123123', Validators.required),
   });
 

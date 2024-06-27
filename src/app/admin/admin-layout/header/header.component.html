@@ -283,11 +283,7 @@
           data-dropdown-toggle="dropdown"
         >
           <span class="sr-only">Open user menu</span>
-          <img
-            class="w-8 h-8 rounded-full"
-            src="https://pbs.twimg.com/profile_images/1730708382229655552/BNHrf5e0_400x400.jpg"
-            alt="user photo"
-          />
+          <img class="w-8 h-8 rounded-full" src="" alt="user photo" />
         </button>
 
         <div
@@ -297,11 +293,11 @@
           <div class="py-3 px-4">
             <span
               class="block text-sm font-semibold text-gray-900 dark:text-white"
-              >Alonso Nava</span
+              >{{ user.name }}</span
             >
             <span
               class="block text-sm text-gray-500 truncate dark:text-gray-400"
-              >{{ "alonso@gmail.com" }}</span
+              >{{ user.email }}</span
             >
           </div>
           <ul
@@ -378,9 +374,10 @@
           >
             <li>
               <a
+                (click)="logout()"
                 href="#"
                 class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Sign out</a
+                >Logout</a
               >
             </li>
           </ul>

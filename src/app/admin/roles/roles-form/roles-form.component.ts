@@ -4,11 +4,12 @@ import { RolesService } from '../roles.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BreadcrumbComponent } from '../../admin-layout/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-roles-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, BreadcrumbComponent],
   templateUrl: './roles-form.component.html',
 })
 export class RolesFormComponent {
@@ -21,6 +22,10 @@ export class RolesFormComponent {
   text_validation: any = null;
   role_id: any;
   public type_form: number = 1;
+  public name_button = 'Guardar Registro';
+
+  public route: string = '';
+  public breadcumb: string = 'Roles-Agregar';
   constructor(
     public DataService: DataService,
     public RoleService: RolesService,
@@ -31,7 +36,8 @@ export class RolesFormComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.sideBar = this.DataService.sideBar[0].menu;
+    this.route = this.router.url;
+    this.sideBar = this.DataService.rolesList[0].menu;
     this.activedRoute.params.subscribe((resp: any) => {
       if (resp.id) {
         this.type_form = 2;
@@ -42,8 +48,9 @@ export class RolesFormComponent {
   }
   //PARA EDICION DEL FORMULARIO
   showRole() {
+    this.name_button = 'Editar Registro';
     this.RoleService.showRoles(this.role_id).subscribe((resp: any) => {
-      console.log(resp);
+      /* console.log(resp); */
       this.name = resp.name;
       this.permissions = resp.permision_pluck;
     });

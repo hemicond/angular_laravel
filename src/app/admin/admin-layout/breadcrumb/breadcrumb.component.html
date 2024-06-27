@@ -38,7 +38,7 @@
             </svg>
             <a
               class="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white"
-              >{{ breadcumb }}</a
+              >{{ route }}</a
             >
           </div>
         </li>
@@ -88,7 +88,9 @@
         </svg>
         Refresh
       </button>
+
       <a
+        *ngIf="isPermision('register_rol')"
         routerLink="form"
         class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
       >
